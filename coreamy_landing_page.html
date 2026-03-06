@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coreamy – DNA de Salmão PDRN | Rejuvenesça 10 Anos em 30 Dias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FAF6F0;
+      --cream2: #F5EFE6;
+      --black: #1a1a1a;
+      --gold: #C9A84C;
+      --gold2: #B8972E;
+      --red: #C0392B;
+      --red2: #9B1C1C;
+      --white: #ffffff;
+      --gray: #6b6b6b;
+      --light-gray: #e8e0d5;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── TOP BAR ─── */
+    .top-bar {
+      background: var(--red);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .top-bar span { font-weight: 700; }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      background: var(--black);
+      padding: 14px 0;
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+    .navbar-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .navbar-links a {
+      color: #ccc;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color .2s;
+    }
+    .navbar-links a:hover { color: var(--gold); }
+    .navbar-cta {
+      background: var(--gold);
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--cream);
+      padding: 60px 0 0;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+    .hero h1 .gold-italic {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .hero-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+    .hero-bullets li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--black);
+      color: #fff;
+      padding: 16px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: #333; }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      padding: 16px 32px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-gold:hover { background: var(--gold2); }
+
+    .hero-image-wrap {
+      position: relative;
+      min-height: 420px;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.95);
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1.4;
+    }
+    .hero-badge .big { font-size: 22px; color: var(--gold); font-weight: 900; }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--black);
+      padding: 18px 0;
+      margin-top: 40px;
+    }
+    .trust-bar .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .trust-item .icon {
+      font-size: 20px;
+    }
+    .trust-item strong { color: var(--gold); }
+
+    /* ─── SECTION WRAPPER ─── */
+    .section { padding: 70px 0; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+      color: var(--black);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-title .gold-italic {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      font-size: 15px;
+      max-width: 680px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    /* ─── BIO-CIÊNCIA ─── */
+    .biociencia-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .bio-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .bio-card .icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+    .bio-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+    .bio-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .section-cta { text-align: center; }
+
+    /* ─── BIOLOGIA IMPLAUSÍVEL ─── */
+    .bio-implausivel { background: var(--cream2); }
+    .bio-icon-wrap {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .bio-icon-wrap img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--gold);
+    }
+    .bio-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+    .bio-col h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+    .bio-col p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+    .bio-highlight {
+      background: var(--black);
+      border-radius: 10px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .bio-highlight .dot {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .bio-highlight p {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .bio-highlight strong { color: var(--gold); }
+
+    /* ─── POR QUE APOSTAR ─── */
+    .apostar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    }
+    .apostar-left {
+      background: var(--black);
+      padding: 40px 36px;
+      color: #fff;
+    }
+    .apostar-left .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 5px 12px;
+      border-radius: 3px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .apostar-left h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      line-height: 1.3;
+      color: var(--gold);
+    }
+    .apostar-point {
+      margin-bottom: 20px;
+    }
+    .apostar-point .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .apostar-point h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .apostar-point p {
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.6;
+    }
+    .apostar-right {
+      background: #fff;
+      padding: 40px 36px;
+    }
+    .apostar-right-point {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #f0e8dc;
+    }
+    .apostar-right-point:last-child { border-bottom: none; margin-bottom: 0; }
+    .apostar-right-point .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .apostar-right-point h5 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--red);
+      margin-bottom: 6px;
+    }
+    .apostar-right-point p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ─── CÓDIGO DE ACESSO ─── */
+    .codigo-acesso { background: var(--cream2); }
+    .codigo-banner {
+      background: var(--black);
+      border-radius: 8px;
+      padding: 18px 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .codigo-banner p {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .codigo-banner strong { color: var(--gold); }
+    .codigo-layout {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .codigo-col { display: flex; flex-direction: column; gap: 28px; }
+    .codigo-item .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .codigo-item h5 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .codigo-item p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .codigo-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+
+    /* ─── DNA SALMÃO ─── */
+    .dna-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .dna-image-wrap { position: relative; }
+    .dna-image-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 420px;
+    }
+    .dna-image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(20,20,20,0.88);
+      color: #ddd;
+      font-size: 12px;
+      padding: 16px 20px;
+      border-radius: 0 0 12px 12px;
+      line-height: 1.6;
+    }
+    .dna-image-caption strong { color: var(--gold); }
+    .dna-content .section-label { text-align: left; }
+    .dna-content h2 {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .dna-bullets { list-style: none; }
+    .dna-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.6;
+    }
+    .dna-bullets li .check {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .dna-bullets li strong { color: var(--black); }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { background: var(--cream2); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--black);
+    }
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--gray);
+    }
+    .testimonial-stars { color: #f5a623; font-size: 13px; margin-bottom: 10px; }
+    .testimonial-text {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .testimonial-result {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* ─── ATENÇÃO ─── */
+    .atencao-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .atencao-content .section-label { text-align: left; }
+    .atencao-content h2 {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .atencao-content h2 .gold-italic {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .atencao-content p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .atencao-highlight {
+      font-size: 18px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .atencao-image-wrap { position: relative; }
+    .atencao-image-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .atencao-image-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--black);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .atencao-image-badge .gold { color: var(--gold); font-size: 16px; }
+
+    /* ─── PRODUTOS ─── */
+    .produtos { background: var(--black); }
+    .produtos .section-label { color: var(--gold); }
+    .produtos .section-title { color: #fff; }
+    .produtos .section-title .gold-italic { color: var(--gold); }
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: end;
+    }
+    .produto-card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      border: 1px solid #333;
+      transition: transform .2s;
+    }
+    .produto-card:hover { transform: translateY(-4px); }
+    .produto-card.featured {
+      background: #1a1a1a;
+      border: 2px solid var(--gold);
+      transform: scale(1.04);
+      position: relative;
+    }
+    .produto-card.featured::before {
+      content: "MAIS POPULAR";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+    .produto-card img {
+      width: 100%;
+      max-height: 160px;
+      object-fit: contain;
+      margin-bottom: 16px;
+    }
+    .produto-qty {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .produto-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .produto-price-old {
+      font-size: 12px;
+      color: #777;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+    .produto-price {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .produto-price.featured-price { font-size: 30px; }
+    .produto-installment {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 16px;
+    }
+    .btn-produto {
+      display: block;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-bottom: 10px;
+    }
+    .btn-produto:hover { background: #444; }
+    .btn-produto.gold-btn {
+      background: var(--gold);
+    }
+    .btn-produto.gold-btn:hover { background: var(--gold2); }
+    .produto-frete {
+      font-size: 11px;
+      color: #888;
+    }
+    .produto-frete.free { color: #4caf50; font-weight: 600; }
+
+    /* ─── TRUST BAR 2 ─── */
+    .trust-bar-2 {
+      background: #111;
+      border-top: 1px solid #333;
+      padding: 16px 0;
+    }
+    .trust-bar-2 .container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .trust2-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #aaa;
+      font-size: 12px;
+    }
+    .trust2-item .icon { color: var(--gold); font-size: 16px; }
+
+    /* ─── GARANTIA ─── */
+    .garantia { background: var(--cream2); }
+    .garantia-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .garantia-badge {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 4px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .garantia-badge .days {
+      font-size: 52px;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1;
+    }
+    .garantia-badge .label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .garantia-content .section-label { text-align: left; }
+    .garantia-content h2 {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .garantia-content h2 .red { color: var(--red); }
+    .garantia-content p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── MÉDICO ─── */
+    .medico-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .medico-image-wrap img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .medico-content .section-label { text-align: left; }
+    .medico-content h2 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .medico-content .subtitle {
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .medico-content p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ─── PILARES ─── */
+    .pilares { background: var(--cream2); }
+    .pilares-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr) auto;
+      gap: 24px;
+      align-items: start;
+    }
+    .pilar-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .pilar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .pilar-num {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .pilar-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .pilar-card p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .pilares-image img {
+      width: 200px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+    .pilares-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--cream); }
+    .faq-title-wrap { text-align: center; margin-bottom: 40px; }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--light-gray);
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question .arrow {
+      color: var(--gold);
+      font-size: 18px;
+      transition: transform .2s;
+    }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+      padding-bottom: 18px;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--black);
+      color: #aaa;
+      padding: 48px 0 24px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #888;
+    }
+    .footer-col h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+    .footer-col ul li a {
+      font-size: 13px;
+      color: #888;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-divider {
+      border: none;
+      border-top: 1px solid #333;
+      margin-bottom: 24px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 12px; color: #666; }
+    .footer-disclaimer {
+      font-size: 11px;
+      color: #555;
+      line-height: 1.6;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .biociencia-cards { grid-template-columns: repeat(2, 1fr); }
+      .bio-cols { grid-template-columns: 1fr; }
+      .apostar-grid { grid-template-columns: 1fr; }
+      .codigo-layout { grid-template-columns: 1fr; }
+      .codigo-image { display: none; }
+      .dna-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .atencao-grid { grid-template-columns: 1fr; }
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+      .garantia-grid { grid-template-columns: 1fr; text-align: center; }
+      .medico-grid { grid-template-columns: 1fr; }
+      .pilares-grid { grid-template-columns: repeat(2, 1fr); }
+      .pilares-image { display: none; }
+      .footer-top { grid-template-columns: 1fr; }
+      .navbar-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    🔥 Oferta por tempo limitado — <span>Frete Grátis + 30% OFF</span> nas compras acima de 2 unidades. Use o cupom: <span>PELE30</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-logo">COREAMY</div>
+      <ul class="navbar-links">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Tecnologia PDRN</a></li>
+        <li><a href="#">Resultados</a></li>
+        <li><a href="#">Depoimentos</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+      <a href="#produtos" class="navbar-cta">COMPRAR AGORA</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-label">Antes e Depois Reais</p>
+        <h1>
+          Rejuvenesça 10 Anos com o
+          <span class="gold-italic">DNA de Salmão:</span>
+          O Truque Secreto das Atrizes Coreanas Para uma
+          <span class="gold-italic">Pele de 20 Anos</span>
+          em menos de 30 dias.
+        </h1>
+        <ul class="hero-bullets">
+          <li>Fórmula exclusiva com tecnologia PDRN — o mesmo ativo usado em clínicas de estética de alto padrão</li>
+          <li>A única opção aprovada para recuperar colágeno perdido sem agulhas, sem dor e sem procedimentos invasivos</li>
+          <li>Testado e aprovado por dermatologistas — resultados visíveis em até 15 dias de uso contínuo</li>
+        </ul>
+        <a href="#produtos" class="btn-primary">QUERO MINHA PELE JOVEM</a>
+      </div>
+      <div class="hero-image-wrap">
+        <div style="position:relative; width:100%; border-radius:8px; overflow:hidden; background:#e8d5c0;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; height:420px;">
+            <div style="background: linear-gradient(135deg, #c8a882 0%, #a07850 100%); display:flex; align-items:center; justify-content:center; position:relative;">
+              <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Antes" style="width:100%; height:100%; object-fit:cover; filter:grayscale(30%) contrast(1.1) brightness(0.85);" />
+              <div style="position:absolute; bottom:12px; left:12px; background:rgba(0,0,0,0.6); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:3px; letter-spacing:1px;">ANTES</div>
+            </div>
+            <div style="background: linear-gradient(135deg, #f5e6d0 0%, #e8c9a0 100%); display:flex; align-items:center; justify-content:center; position:relative;">
+              <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Depois" style="width:100%; height:100%; object-fit:cover; filter:brightness(1.1) saturate(1.2) contrast(0.95);" />
+              <div style="position:absolute; bottom:12px; right:12px; background:rgba(201,168,76,0.9); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:3px; letter-spacing:1px;">DEPOIS</div>
+            </div>
+          </div>
+          <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:3px; height:100%; background:rgba(255,255,255,0.8);"></div>
+        </div>
+        <div class="hero-badge" style="position:absolute; bottom:20px; right:20px;">
+          <div class="big">100%</div>
+          <div>Aprovado por<br/><strong>Dermatologistas</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-item">
+          <span class="icon">🏆</span>
+          <span>Mais de <strong>50.000</strong> clientes satisfeitas</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">⭐</span>
+          <span>Avaliação <strong>4.9/5</strong> estrelas</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">🔬</span>
+          <span>Tecnologia <strong>PDRN</strong> certificada</span>
+        </div>
+        <div class="trust-item">
+          <span class="icon">🌿</span>
+          <span>Ingredientes <strong>100% naturais</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÃO É MÁGICA -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Baseado em Ciência Real</p>
+      <h2 class="section-title">Não é Mágica. É <span class="gold-italic">Bio-Ciência.</span></h2>
+      <p class="section-subtitle">
+        Enquanto outras marcas prometem milagres com ingredientes comuns, a Coreamy utiliza a mesma tecnologia de regeneração celular usada em procedimentos médicos de ponta — agora acessível para você, em casa, todos os dias.
+      </p>
+      <div class="biociencia-cards">
+        <div class="bio-card">
+          <div class="icon">⭐</div>
+          <h4>Voltam à Juventude Incomparável</h4>
+          <p>O PDRN ativa receptores A2A que estimulam a produção natural de colágeno e elastina, devolvendo firmeza e viço à pele em tempo recorde.</p>
+        </div>
+        <div class="bio-card">
+          <div class="icon">💎</div>
+          <h4>Tecnologia de Ponta do Futuro</h4>
+          <p>Extraído do DNA do salmão, o PDRN possui estrutura molecular idêntica ao DNA humano, garantindo absorção e eficácia incomparáveis.</p>
+        </div>
+        <div class="bio-card">
+          <div class="icon">🌿</div>
+          <h4>Células Tronco Ativadas</h4>
+          <p>Estimula a regeneração celular profunda, ativando células-tronco da pele para reparar danos causados pelo sol, estresse e envelhecimento.</p>
+        </div>
+        <div class="bio-card">
+          <div class="icon">❤️</div>
+          <h4>Amor e Cuidado Excepcional</h4>
+          <p>Desenvolvido com os mais altos padrões de qualidade coreanos, cada frasco passa por rigoroso controle de qualidade antes de chegar até você.</p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#produtos" class="btn-primary">QUERO AGORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOLOGIA IMPLAUSÍVEL -->
+  <section class="section bio-implausivel">
+    <div class="container">
+      <div class="bio-icon-wrap">
+        <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=200&q=80" alt="DNA de Salmão" />
+      </div>
+      <p class="section-label">A Ciência Por Trás do Produto</p>
+      <h2 class="section-title">A Biologia Implausível da<br/><span class="gold-italic">DNA de Salmão (PDRN)</span></h2>
+      <p class="section-subtitle">
+        O PDRN (Polydeoxyribonucleotide) é um fragmento de DNA extraído do esperma do salmão do Atlântico. Sua estrutura molecular é compatível com o DNA humano, permitindo que ele penetre nas camadas mais profundas da pele.
+      </p>
+      <div class="bio-cols">
+        <div class="bio-col">
+          <h4>🔬 Dermalab</h4>
+          <p>Estudos conduzidos pelo Dermalab Institute confirmam que o uso tópico de PDRN aumenta em até <strong>47%</strong> a produção de colágeno tipo I e III em apenas 28 dias de uso contínuo, comparável a tratamentos com microagulhamento.</p>
+        </div>
+        <div class="bio-col">
+          <h4>🧬 Saúde Molecular</h4>
+          <p>O PDRN atua diretamente nos receptores purinérgicos A2A das células da pele, ativando vias de sinalização que promovem a síntese de fatores de crescimento, aceleração da cicatrização e redução de processos inflamatórios crônicos responsáveis pelo envelhecimento precoce.</p>
+        </div>
+      </div>
+      <div class="bio-highlight">
+        <div class="dot">🧪</div>
+        <p>
+          <strong>Descoberta Revolucionária:</strong> Pesquisadores da Universidade de Messina, na Itália, publicaram em 2019 que o PDRN estimula a produção de VEGF (Fator de Crescimento Endotelial Vascular), melhorando a microcirculação da pele e promovendo um efeito de "glow" natural — o famoso <strong>Glass Skin</strong> das coreanas.
+        </p>
+      </div>
+      <div class="section-cta">
+        <a href="#produtos" class="btn-primary">SAIBA MAIS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE APOSTAR -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" style="text-align:left; margin-bottom:32px;">Por que <span class="gold-italic">Apostar</span> para a Tecnologia PDRN?</h2>
+      <div class="apostar-grid">
+        <div class="apostar-left">
+          <span class="badge">TECNOLOGIA PDRN</span>
+          <h3>Tecnologia PDRN Para a Saúde da Sua Pele</h3>
+          <div class="apostar-point">
+            <div class="num">01 —</div>
+            <h5>Regeneração Celular Profunda</h5>
+            <p>O PDRN penetra nas camadas dérmicas e estimula a renovação celular, combatendo rugas, flacidez e manchas de forma progressiva e duradoura.</p>
+          </div>
+          <div class="apostar-point">
+            <div class="num">02 —</div>
+            <h5>A Poderosa Alternativa das Clínicas</h5>
+            <p>Antes disponível apenas em procedimentos estéticos caros, o PDRN agora está na palma da sua mão — com a mesma eficácia, sem dor e sem agulhas.</p>
+          </div>
+          <div class="apostar-point">
+            <div class="num">03 —</div>
+            <h5>Resultado Comprovado Cientificamente</h5>
+            <p>Mais de 120 estudos clínicos publicados em revistas científicas indexadas comprovam a eficácia e segurança do PDRN para rejuvenescimento cutâneo.</p>
+          </div>
+        </div>
+        <div class="apostar-right">
+          <div class="apostar-right-point">
+            <div class="num">01 —</div>
+            <h5>Resultados Visíveis em 15 Dias</h5>
+            <p>Nossas clientes relatam redução visível de rugas finas e melhora da textura da pele já nas primeiras duas semanas de uso, com resultados que se intensificam ao longo do tempo.</p>
+          </div>
+          <div class="apostar-right-point">
+            <div class="num">02 —</div>
+            <h5>Resultado do Futuro, Disponível Hoje</h5>
+            <p>A tecnologia PDRN foi desenvolvida originalmente para uso médico em cicatrização de feridas e tratamento de lesões. Agora, essa mesma potência está disponível no seu skincare diário.</p>
+          </div>
+          <div class="apostar-right-point">
+            <div class="num">03 —</div>
+            <h5>Eficiência Aprovada por Especialistas</h5>
+            <p>Dermatologistas e especialistas em medicina estética recomendam o PDRN como uma das inovações mais promissoras para o anti-aging não invasivo da última década.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓDIGO DE ACESSO -->
+  <section class="section codigo-acesso">
+    <div class="container">
+      <p class="section-label">O Mecanismo de Ação</p>
+      <h2 class="section-title">O Código de Acesso: Como o DNA de<br/>Salmão (PDRN) Reconstrói Sua Pele?</h2>
+      <div class="codigo-banner">
+        <p>
+          O PDRN age como um <strong>"código de reprogramação"</strong> para suas células. Ao ser absorvido pela pele, ele fornece os blocos de construção necessários para que as células danificadas se reparem e as células jovens se multipliquem — revertendo anos de envelhecimento em semanas.
+        </p>
+      </div>
+      <div class="codigo-layout">
+        <div class="codigo-col">
+          <div class="codigo-item">
+            <div class="num">01 —</div>
+            <h5>REGENERAÇÃO CELULAR</h5>
+            <p>O PDRN fornece nucleotídeos que servem como matéria-prima para a síntese de novo DNA nas células da pele, acelerando a renovação celular e eliminando células danificadas.</p>
+          </div>
+          <div class="codigo-item">
+            <div class="num">02 —</div>
+            <h5>Produção de Colágeno Intensificada</h5>
+            <p>Ao ativar fibroblastos dérmicos, o PDRN estimula a produção de colágeno tipos I, III e IV, responsáveis pela firmeza, elasticidade e estrutura da pele.</p>
+          </div>
+          <div class="codigo-item">
+            <div class="num">03 —</div>
+            <h5>O Fim do Envelhecimento Precoce</h5>
+            <p>Reduz o estresse oxidativo celular e inibe enzimas que degradam o colágeno (MMPs), criando um ambiente ideal para a manutenção de uma pele jovem e saudável.</p>
+          </div>
+        </div>
+        <img
+          class="codigo-image"
+          src="https://images.unsplash.com/photo-1519996529931-28324d5a630e?w=400&q=80"
+          alt="Salmão – fonte do PDRN"
+        />
+        <div class="codigo-col">
+          <div class="codigo-item">
+            <div class="num">01 —</div>
+            <h5>Ação Rápida e Profunda</h5>
+            <p>Graças à sua baixa massa molecular, o PDRN penetra até a derme profunda em minutos, agindo onde outros ativos simplesmente não chegam.</p>
+          </div>
+          <div class="codigo-item">
+            <div class="num">02 —</div>
+            <h5>Hidratação Profunda e Duradoura</h5>
+            <p>Estimula a produção de ácido hialurônico endógeno, garantindo hidratação profunda e duradoura sem a necessidade de injeções ou procedimentos invasivos.</p>
+          </div>
+          <div class="codigo-item">
+            <div class="num">03 —</div>
+            <h5>Efeito Glass Skin Garantido</h5>
+            <p>A combinação de regeneração, hidratação e estímulo de colágeno resulta no efeito "Glass Skin" — pele translúcida, luminosa e sem imperfeições, como as atrizes coreanas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DNA SALMÃO – INTERVENÇÃO EXATA -->
+  <section class="section">
+    <div class="container">
+      <div class="dna-grid">
+        <div class="dna-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
+            alt="Mulher olhando no espelho"
+          />
+          <div class="dna-image-caption">
+            <strong>"Depois de 30 dias usando o Coreamy, minha pele parece ter voltado 10 anos. Minha filha perguntou o que eu tinha feito no rosto!"</strong><br/>
+            — Maria Clara, 52 anos, São Paulo
+          </div>
+        </div>
+        <div class="dna-content">
+          <p class="section-label">Você Se Identifica Com Isso?</p>
+          <h2>O DNA de Salmão (PDRN) É a Intervenção Exata Que Você Precisa?</h2>
+          <ul class="dna-bullets">
+            <li><span class="check">✓</span> <span>Você sente que sua pele <strong>perdeu o viço e a luminosidade</strong> de antes, parecendo opaca e sem vida?</span></li>
+            <li><span class="check">✓</span> <span>Rugas e linhas de expressão que <strong>aparecem cada vez mais</strong> profundas, mesmo com cuidados diários?</span></li>
+            <li><span class="check">✓</span> <span>A sensação de que sua pele está <strong>cada vez mais flácida</strong>, perdendo o contorno do rosto que você amava?</span></li>
+            <li><span class="check">✓</span> <span>Não importa quantos cremes você usa, <strong>nada parece funcionar</strong> de verdade ou durar mais do que alguns dias?</span></li>
+            <li><span class="check">✓</span> <span>O cansaço e o estresse <strong>refletem diretamente na sua pele</strong>, deixando-a com aparência de cansaço constante?</span></li>
+            <li><span class="check">✓</span> <span>Nossas clientes relatam que se sentem <strong>mais jovens, mais confiantes</strong> e recebem elogios sobre a pele após apenas 3 semanas.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section testimonials">
+    <div class="container">
+      <p class="section-label">Resultados Reais</p>
+      <h2 class="section-title">O Fim dos Procedimentos Invasivos:<br/>Resultados de Quem Já Deslumbrou<br/>o Efeito <span class="gold-italic">Glass Skin</span></h2>
+      <p class="section-subtitle">Mais de 50.000 mulheres já transformaram sua pele com a tecnologia PDRN da Coreamy. Veja o que elas têm a dizer:</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ana Paula Ferreira</div>
+              <div class="testimonial-role">Empresária, 48 anos — São Paulo, SP</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Eu estava desacreditada com produtos anti-aging depois de gastar fortunas em cremes que não funcionavam. O Coreamy mudou completamente minha perspectiva. Em 3 semanas, minhas rugas de expressão diminuíram visivelmente e minha pele ficou muito mais firme. Meu marido perguntou se eu tinha feito botox!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 21 dias de uso</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩‍🦱</div>
+            <div>
+              <div class="testimonial-name">Carla Mendonça</div>
+              <div class="testimonial-role">Professora, 55 anos — Rio de Janeiro, RJ</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Tenho 55 anos e sempre tive a pele muito ressecada e com manchas. Depois de 30 dias usando o Coreamy, as manchas clarearam significativamente e minha pele ficou com aquele brilho natural que eu não via há anos. Parece que rejuvenesce de dentro para fora!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 30 dias de uso</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩‍🦳</div>
+            <div>
+              <div class="testimonial-name">Fernanda Costa</div>
+              <div class="testimonial-role">Médica, 43 anos — Belo Horizonte, MG</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Como médica, sou muito cética com produtos cosméticos. Mas o embasamento científico do PDRN me convenceu a tentar. Os resultados foram surpreendentes — minha pele ficou mais firme, luminosa e com textura muito mais uniforme. Já recomendo para minhas pacientes!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 15 dias de uso</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Beatriz Santos</div>
+              <div class="testimonial-role">Advogada, 50 anos — Curitiba, PR</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Estava prestes a fazer um procedimento estético caro quando uma amiga me indicou o Coreamy. Resolvi tentar antes de gastar tanto dinheiro. Que decisão acertada! Em 4 semanas, minha pele melhorou tanto que cancelei o procedimento. Economizei muito e fiquei com a pele incrível!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 28 dias de uso</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩‍🦱</div>
+            <div>
+              <div class="testimonial-name">Patrícia Lima</div>
+              <div class="testimonial-role">Nutricionista, 46 anos — Fortaleza, CE</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Tenho pele mista e sempre tive dificuldade em encontrar produtos que equilibrassem sem ressecar. O Coreamy é perfeito — hidrata profundamente sem deixar oleoso. Meus poros ficaram visivelmente menores e a pele com aquele efeito "glass skin" que eu tanto queria!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 20 dias de uso</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Luciana Oliveira</div>
+              <div class="testimonial-role">Arquiteta, 52 anos — Porto Alegre, RS</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            Comecei a usar o Coreamy há 2 meses e a transformação é incrível. Minha pele está muito mais firme, as rugas ao redor dos olhos diminuíram bastante e o tom ficou muito mais uniforme. Recebo elogios todos os dias no trabalho. Não largo mais esse produto!
+          </p>
+          <p class="testimonial-result">✨ Resultado em 60 dias de uso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATENÇÃO -->
+  <section class="section">
+    <div class="container">
+      <div class="atencao-grid">
+        <div class="atencao-content">
+          <p class="section-label">Uma Mensagem Importante Para Você</p>
+          <h2>Atenção! Você Merece<br/><span class="gold-italic">Cuidar de Você Mesma</span></h2>
+          <p>
+            Você passa o dia inteiro cuidando de todos ao seu redor — família, trabalho, amigos. Mas quando foi a última vez que você se colocou em primeiro lugar? Quando foi a última vez que investiu em si mesma sem culpa?
+          </p>
+          <p>
+            Sua pele conta a história de tudo que você viveu. E ela merece ser tratada com a mesma dedicação que você oferece ao mundo. Não é vaidade — é autocuidado. É respeito próprio.
+          </p>
+          <div class="atencao-highlight">
+            É seu direito.<br/>Cuide-se!<br/>Você Merece!
+          </div>
+          <p>
+            O Coreamy foi criado para mulheres como você — que merecem o melhor, que não têm tempo a perder com produtos que não funcionam e que querem resultados reais, visíveis e duradouros.
+          </p>
+        </div>
+        <div class="atencao-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
+            alt="Mulher cuidando de si mesma"
+          />
+          <div class="atencao-image-badge">
+            <div class="gold">★★★★★</div>
+            <div>4.9/5</div>
+            <div style="font-size:10px; color:#aaa;">50k+ avaliações</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="section produtos" id="produtos">
+    <div class="container">
+      <p class="section-label">Escolha Seu Kit</p>
+      <h2 class="section-title">Escolha o Ritmo da sua <span class="gold-italic">Transformação</span></h2>
+      <p class="section-subtitle" style="color:#aaa;">Quanto mais você investe na sua pele, mais economia e resultados você obtém. Escolha o kit ideal para a sua jornada de rejuvenescimento.</p>
+      <div class="produtos-grid">
+        <div class="produto-card">
+          <div class="produto-qty">1 Frasco</div>
+          <div class="produto-name">Starter</div>
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" alt="Coreamy 1 frasco" />
+          <div class="produto-price-old">De R$ 197,00</div>
+          <div class="produto-price">R$ 147,00</div>
+          <div class="produto-installment">ou 12x de R$ 14,90</div>
+          <a href="#" class="btn-produto">COMPRAR AGORA</a>
+          <div class="produto-frete">Frete não incluso</div>
+        </div>
+        <div class="produto-card">
+          <div class="produto-qty">2 Frascos</div>
+          <div class="produto-name">Duo</div>
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" alt="Coreamy 2 frascos" />
+          <div class="produto-price-old">De R$ 394,00</div>
+          <div class="produto-price">R$ 267,00</div>
+          <div class="produto-installment">ou 12x de R$ 27,10</div>
+          <a href="#" class="btn-produto">COMPRAR AGORA</a>
+          <div class="produto-frete free">✓ Frete Grátis</div>
+        </div>
+        <div class="produto-card featured">
+          <div class="produto-qty">3 Frascos</div>
+          <div class="produto-name">Transformação</div>
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" alt="Coreamy 3 frascos" />
+          <div class="produto-price-old">De R$ 591,00</div>
+          <div class="produto-price featured-price">R$ 367,00</div>
+          <div class="produto-installment">ou 12x de R$ 37,20</div>
+          <a href="#" class="btn-produto gold-btn">TRANSFORMAR MINHA PELE</a>
+          <div class="produto-frete free">✓ Frete Grátis + Brinde</div>
+        </div>
+        <div class="produto-card">
+          <div class="produto-qty">5 Frascos</div>
+          <div class="produto-name">Elite</div>
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80" alt="Coreamy 5 frascos" />
+          <div class="produto-price-old">De R$ 985,00</div>
+          <div class="produto-price">R$ 545,00</div>
+          <div class="produto-installment">ou 12x de R$ 55,30</div>
+          <a href="#" class="btn-produto">COMPRAR AGORA</a>
+          <div class="produto-frete free">✓ Frete Grátis + 2 Brindes</div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-bar-2">
+      <div class="container">
+        <div class="trust2-item"><span class="icon">🔒</span> Pagamento 100% Seguro</div>
+        <div class="trust2-item"><span class="icon">🚚</span> Entrega em Todo Brasil</div>
+        <div class="trust2-item"><span class="icon">↩️</span> 30 Dias de Garantia</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="section garantia">
+    <div class="container">
+      <div class="garantia-grid">
+        <div class="garantia-badge">
+          <div class="days">30</div>
+          <div class="label">Dias de<br/>Garantia</div>
+        </div>
+        <div class="garantia-content">
+          <p class="section-label">Risco Zero Para Você</p>
+          <h2>Experimente o Coreamy <span class="red">Sem Nenhum Risco.</span><br/>Resultados Comprovados ou Seu Dinheiro de Volta.</h2>
+          <p>
+            Temos tanta confiança na eficácia do nosso produto que oferecemos uma garantia incondicional de 30 dias. Se por qualquer motivo você não ficar satisfeita com os resultados, basta entrar em contato com nosso suporte e devolvemos 100% do seu dinheiro — sem perguntas, sem burocracia, sem complicações. Você não tem nada a perder e uma pele incrível a ganhar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉDICO -->
+  <section class="section">
+    <div class="container">
+      <div class="medico-grid">
+        <div class="medico-image-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80"
+            alt="Dr. especialista em dermatologia"
+          />
+        </div>
+        <div class="medico-content">
+          <p class="section-label">Credibilidade Científica</p>
+          <h2>Garantia do Médico Responsável pelo Desenvolvimento do Produto no Brasil</h2>
+          <p class="subtitle">Dr. Kim Sung-Ho, PhD em Biomedicina</p>
+          <p>
+            "O PDRN é uma das descobertas mais significativas da dermatologia moderna. Após 15 anos pesquisando regeneração celular, posso afirmar com convicção científica: nenhum outro ativo cosmético apresenta a mesma capacidade de estimular a reparação do DNA celular e a síntese de colágeno de forma tão eficaz e segura. O Coreamy representa o estado da arte em cuidados com a pele."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="section pilares">
+    <div class="container">
+      <p class="section-label">Nossa Filosofia</p>
+      <h2 class="section-title">Nossos Pilares de <span class="gold-italic">Excelência</span></h2>
+      <div class="pilares-grid">
+        <div class="pilar-card">
+          <div class="pilar-icon">🔬</div>
+          <div class="pilar-num">Pilar 01</div>
+          <h4>Inovação Científica</h4>
+          <p>Cada produto Coreamy é desenvolvido com base em pesquisas científicas rigorosas, utilizando apenas ativos com eficácia comprovada em estudos clínicos publicados.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-icon">🌿</div>
+          <div class="pilar-num">Pilar 02</div>
+          <h4>Sustentabilidade Ética</h4>
+          <p>Nossos ingredientes são obtidos de forma sustentável e ética. O PDRN é extraído de subprodutos da indústria pesqueira, sem causar danos ao ecossistema marinho.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-icon">❤️</div>
+          <div class="pilar-num">Pilar 03</div>
+          <h4>Segurança Comprovada</h4>
+          <p>Todos os nossos produtos passam por testes dermatológicos rigorosos e são aprovados pela ANVISA, garantindo máxima segurança para todos os tipos de pele.</p>
+        </div>
+        <div class="pilar-card">
+          <div class="pilar-icon">⭐</div>
+          <div class="pilar-num">Pilar 04</div>
+          <h4>Resultados Reais</h4>
+          <p>Não fazemos promessas vazias. Cada afirmação sobre nossos produtos é respaldada por estudos clínicos e pelos depoimentos reais de mais de 50.000 clientes satisfeitas.</p>
+        </div>
+        <div class="pilares-image">
+          <img
+            src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=300&q=80"
+            alt="Produtos Coreamy"
+          />
+        </div>
+      </div>
+      <div class="pilares-cta">
+        <a href="#produtos" class="btn-primary">🛒 GARANTIR MINHA TRANSFORMAÇÃO AGORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq">
+    <div class="container">
+      <div class="faq-title-wrap">
+        <p class="section-label">Tire Suas Dúvidas</p>
+        <h2 class="section-title">Consultoria <span class="gold-italic">PDRN</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            O que é o PDRN e como ele funciona?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            O PDRN (Polydeoxyribonucleotide) é um fragmento de DNA extraído do esperma do salmão do Atlântico. Ele age como um "código de reprogramação" para as células da pele, estimulando a produção de colágeno, elastina e ácido hialurônico, além de ativar receptores que promovem a regeneração celular profunda.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Em quanto tempo verei os primeiros resultados?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            A maioria das nossas clientes relata os primeiros resultados visíveis entre 10 e 15 dias de uso contínuo. Melhoras significativas na firmeza, luminosidade e textura da pele são percebidas em até 30 dias. Para resultados completos e duradouros, recomendamos o uso por pelo menos 60 a 90 dias.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            O produto é seguro para peles sensíveis?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Sim! O Coreamy foi formulado para ser compatível com todos os tipos de pele, incluindo peles sensíveis e reativas. Nossa fórmula é livre de parabenos, sulfatos, fragrâncias artificiais e outros irritantes comuns. Todos os ingredientes foram testados dermatologicamente.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Posso usar junto com outros produtos?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Sim, o Coreamy é compatível com a maioria dos produtos de skincare. Recomendamos aplicá-lo após a limpeza e tônico, antes do hidratante e protetor solar. Evite usar com produtos que contenham ácidos em alta concentração na mesma etapa da rotina.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Qual é a política de devolução?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Oferecemos garantia incondicional de 30 dias. Se você não ficar satisfeita com os resultados por qualquer motivo, basta entrar em contato com nosso suporte dentro do prazo e devolveremos 100% do valor pago, sem perguntas e sem burocracia.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Por que usar o Coreamy?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            O Coreamy combina a tecnologia PDRN mais avançada disponível com uma formulação cuidadosamente desenvolvida para maximizar a absorção e eficácia. Diferente de outros produtos, nossa fórmula utiliza PDRN de alta pureza (99,9%) em concentração terapêutica, garantindo resultados reais e mensuráveis.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Tem alguma contraindicação?
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            O Coreamy é contraindicado para pessoas com alergia conhecida a produtos derivados de peixes. Gestantes e lactantes devem consultar seu médico antes de usar. Não aplicar em pele lesionada, irritada ou com infecções ativas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">COREAMY</div>
+          <p class="footer-desc">
+            Tecnologia coreana de ponta para o rejuvenescimento da sua pele. O segredo das atrizes coreanas, agora acessível para você.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Links Úteis</h5>
+          <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Tecnologia PDRN</a></li>
+            <li><a href="#">Resultados</a></li>
+            <li><a href="#">Depoimentos</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Atendimento</h5>
+          <ul>
+            <li><a href="#">suporte@coreamy.com.br</a></li>
+            <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
+            <li><a href="#">Seg–Sex: 9h às 18h</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Trocas</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <p>© 2025 Coreamy. Todos os direitos reservados. CNPJ: XX.XXX.XXX/0001-XX</p>
+        <p>🔒 Site seguro — SSL certificado</p>
+      </div>
+      <p class="footer-disclaimer">
+        * Os resultados podem variar de pessoa para pessoa. As afirmações sobre os produtos não foram avaliadas pela ANVISA. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte sempre um dermatologista antes de iniciar qualquer tratamento estético. As imagens de antes e depois são de clientes reais que consentiram com o uso de suas imagens.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
