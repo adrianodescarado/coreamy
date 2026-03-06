@@ -14,6 +14,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -32,11 +33,11 @@ padding:20px;
 background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:90px 20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:46px;
 margin-bottom:20px;
 }
 
@@ -49,12 +50,20 @@ opacity:.9;
 display:inline-block;
 background:#ff2e63;
 color:white;
-padding:16px 35px;
+padding:18px 38px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
 margin-top:25px;
+font-size:18px;
 transition:.3s;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
 }
 
 .btn:hover{
@@ -62,12 +71,12 @@ background:#e40046;
 }
 
 .section{
-padding:70px 20px;
+padding:80px 20px;
 }
 
 .section h2{
 text-align:center;
-font-size:32px;
+font-size:34px;
 margin-bottom:40px;
 }
 
@@ -80,9 +89,14 @@ gap:25px;
 .card{
 background:white;
 padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
 }
 
 .card h3{
@@ -99,9 +113,9 @@ background:#f2f2f2;
 
 .testimonial{
 background:white;
-padding:20px;
-border-radius:8px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .offer{
@@ -110,17 +124,25 @@ color:white;
 text-align:center;
 }
 
-.price{
-font-size:38px;
-color:#00ffae;
-margin:10px 0;
-}
-
 .pack{
 background:white;
 color:#333;
-padding:25px;
-border-radius:10px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.price{
+font-size:40px;
+color:#00ffae;
+margin:10px 0;
+font-weight:bold;
+}
+
+.stock{
+color:#ff4d4d;
+font-weight:bold;
+margin-top:10px;
 }
 
 .faq{
@@ -128,7 +150,7 @@ background:#fff;
 }
 
 .faq-item{
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 footer{
@@ -137,6 +159,20 @@ color:#aaa;
 text-align:center;
 padding:40px 20px;
 font-size:14px;
+}
+
+.notification{
+
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+font-size:14px;
+display:none;
+
 }
 
 </style>
@@ -175,8 +211,8 @@ font-size:14px;
 </div>
 
 <div class="card">
-<h3>Pele de vidro</h3>
-<p>Textura lisa, hidratada e iluminada.</p>
+<h3>Pele iluminada</h3>
+<p>Textura lisa e aparência jovem.</p>
 </div>
 
 </div>
@@ -194,8 +230,9 @@ font-size:14px;
 
 <p style="text-align:center;font-size:18px;max-width:700px;margin:auto">
 
-O PDRN age diretamente nas células da pele estimulando a produção de colágeno e elastina,
-reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
+O PDRN estimula diretamente as células da pele,
+ativando a produção natural de colágeno e restaurando
+a firmeza do rosto.
 
 </p>
 
@@ -213,17 +250,17 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 <div class="grid">
 
 <div class="testimonial">
-<p>"Minha pele voltou a ter firmeza e brilho em poucas semanas."</p>
+<p>"Minha pele voltou a ter firmeza em poucas semanas."</p>
 <strong>Mariana, 48 anos</strong>
 </div>
 
 <div class="testimonial">
-<p>"As linhas do rosto suavizaram muito. Parece outro rosto."</p>
+<p>"As linhas do rosto suavizaram muito."</p>
 <strong>Luciana, 42 anos</strong>
 </div>
 
 <div class="testimonial">
-<p>"A textura da pele mudou completamente."</p>
+<p>"Minha pele parece 10 anos mais jovem."</p>
 <strong>Sandra, 55 anos</strong>
 </div>
 
@@ -252,6 +289,8 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 
 <a class="btn">Comprar</a>
 
+<p class="stock">Restam <span id="stock1">17</span> unidades</p>
+
 </div>
 
 
@@ -265,6 +304,8 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 
 <a class="btn">Comprar</a>
 
+<p class="stock">Restam <span id="stock2">12</span> unidades</p>
+
 </div>
 
 
@@ -277,6 +318,8 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 <p>Melhor custo benefício</p>
 
 <a class="btn">Comprar</a>
+
+<p class="stock">Restam <span id="stock3">8</span> unidades</p>
 
 </div>
 
@@ -295,17 +338,17 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 
 <div class="faq-item">
 <strong>Em quanto tempo aparecem os resultados?</strong>
-<p>Normalmente entre 7 e 30 dias de uso contínuo.</p>
+<p>Entre 7 e 30 dias.</p>
 </div>
 
 <div class="faq-item">
 <strong>Tem contraindicação?</strong>
-<p>Produto dermatologicamente testado e seguro.</p>
+<p>Dermatologicamente testado.</p>
 </div>
 
 <div class="faq-item">
 <strong>Como usar?</strong>
-<p>Aplique algumas gotas pela manhã e à noite no rosto limpo.</p>
+<p>Aplique diariamente no rosto limpo.</p>
 </div>
 
 </div>
@@ -320,6 +363,36 @@ reconstruindo a firmeza do rosto e combatendo sinais do envelhecimento.
 <p>Política de Privacidade • Termos de Uso</p>
 
 </footer>
+
+
+<div class="notification" id="notification"></div>
+
+
+<script>
+
+const nomes = ["Ana","Mariana","Lucia","Carla","Juliana","Fernanda","Paula"]
+
+function compra(){
+
+let nome = nomes[Math.floor(Math.random()*nomes.length)]
+
+let notif = document.getElementById("notification")
+
+notif.innerHTML = nome+" acabou de comprar"
+
+notif.style.display="block"
+
+setTimeout(()=>{
+
+notif.style.display="none"
+
+},3000)
+
+}
+
+setInterval(compra,8000)
+
+</script>
 
 </body>
 </html>
