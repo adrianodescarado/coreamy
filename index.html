@@ -1,451 +1,1155 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17985996769"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    gtag('config', 'AW-17985996769');
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coreamy - Rejuvenescedor Instantâneo</title>
+  <meta name="description"
+    content="Descubra o PDRN da Coreamy, o sérum que rejuvenesce seu rosto em minutos. Sem agulhas, sem dor e com tecnologia Tensor-Active exclusiva.">
+  <link rel="preload" as="image" href="/antes-e-depois.jpg" fetchpriority="high">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css?v=34">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print"
+    onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
 
-<title>Rejuvenescimento com PDRN</title>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2056520708244599');
+    fbq('init', '1415154023383690');
+    fbq('track', 'PageView');
 
-<style>
+    // Server-Side Event Trigger (CAPI)
+    fetch('/pixel-s2s.php')
+      .then(r => console.log('CAPI Event Sent'))
+      .catch(e => console.error('CAPI Error', e));
+  </script>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Georgia, serif;
-}
-
-body{
-background:#f3eee6;
-color:#222;
-line-height:1.6;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:60px 20px;
-}
-
-.hero{
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:40px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:25px;
-}
-
-.hero img{
-width:100%;
-border-radius:10px;
-}
-
-.btn{
-background:#111;
-color:white;
-padding:14px 30px;
-text-decoration:none;
-border-radius:4px;
-display:inline-block;
-}
-
-.section-title{
-text-align:center;
-font-size:32px;
-margin-bottom:40px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.highlight{
-background:#fcecec;
-}
-
-.comparison{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-.bad{
-background:#111;
-color:white;
-padding:30px;
-border-radius:8px;
-}
-
-.good{
-background:white;
-padding:30px;
-border-radius:8px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-.salmon{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.salmon img{
-width:100%;
-border-radius:8px;
-}
-
-.testimonials{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.testimonial{
-background:white;
-padding:20px;
-border-radius:8px;
-box-shadow:0 4px 12px rgba(0,0,0,.1);
-}
-
-.offer{
-background:white;
-padding:50px;
-border-radius:10px;
-}
-
-.plans{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.plan{
-border:1px solid #ddd;
-padding:25px;
-text-align:center;
-border-radius:8px;
-}
-
-.price{
-font-size:30px;
-margin:10px 0;
-}
-
-.featured{
-border:3px solid #d4af37;
-}
-
-.guarantee{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.video{
-text-align:center;
-}
-
-.video iframe{
-width:100%;
-height:400px;
-border-radius:10px;
-}
-
-.faq{
-max-width:800px;
-margin:auto;
-}
-
-.faq-item{
-margin-bottom:20px;
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:#111;
-color:#aaa;
-}
-
-@media(max-width:900px){
-
-.hero,
-.salmon,
-.comparison,
-.guarantee{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-</style>
-
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
+    async defer></script>
 </head>
 
-
 <body>
-
-
-<div class="container hero">
-
-<div>
-
-<h1>Rejuvenesça até 10 anos sem procedimentos invasivos</h1>
-
-<p>
-Descubra como o DNA de salmão está revolucionando
-os tratamentos de rejuvenescimento facial.
-</p>
-
-<a class="btn">QUERO SABER MAIS</a>
-
-</div>
-
-<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
-
-</div>
-
-
-
-<div class="container">
-
-<h2 class="section-title">Não é mágica. É bio-ciência.</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Regeneração</h3>
-<p>Estimula a renovação celular.</p>
-</div>
-
-<div class="card">
-<h3>Colágeno</h3>
-<p>Produção natural restaurada.</p>
-</div>
-
-<div class="card">
-<h3>Elasticidade</h3>
-<p>Pele mais firme e uniforme.</p>
-</div>
-
-<div class="card highlight">
-<h3>Resultados</h3>
-<p>Melhor aparência em semanas.</p>
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="container comparison">
-
-<div class="bad">
-
-<h3>Tratamentos comuns</h3>
-
-<ul>
-<li>Resultados temporários</li>
-<li>Procedimentos invasivos</li>
-<li>Custo alto</li>
-
-</ul>
-
-</div>
-
-
-<div class="good">
-
-<h3>Método PDRN</h3>
-
-<ul>
-
-<li>Estimula regeneração celular</li>
-<li>Base científica</li>
-<li>Resultados progressivos</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-
-<div class="container salmon">
-
-<img src="https://images.unsplash.com/photo-1543332164-6e82f355badb">
-
-<div>
-
-<h2>O DNA de Salmão</h2>
-
-<p>
-
-A tecnologia PDRN utiliza fragmentos
-de DNA altamente compatíveis com
-as células humanas, ajudando na
-regeneração da pele.
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<div class="container">
-
-<h2 class="section-title">Depoimentos</h2>
-
-<div class="testimonials">
-
-<div class="testimonial">
-"Minha pele ficou mais firme em poucas semanas."
-</div>
-
-<div class="testimonial">
-"As linhas de expressão diminuíram muito."
-</div>
-
-<div class="testimonial">
-"Parece que voltei 10 anos."
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="container offer">
-
-<h2 class="section-title">Escolha seu tratamento</h2>
-
-<div class="plans">
-
-<div class="plan">
-<h3>1 Frasco</h3>
-<p class="price">R$137</p>
-<a class="btn">Comprar</a>
-</div>
-
-<div class="plan">
-<h3>3 Frascos</h3>
-<p class="price">R$277</p>
-<a class="btn">Comprar</a>
-</div>
-
-<div class="plan featured">
-<h3>5 Frascos</h3>
-<p class="price">R$397</p>
-<a class="btn">Comprar</a>
-</div>
-
-<div class="plan">
-<h3>10 Frascos</h3>
-<p class="price">R$697</p>
-<a class="btn">Comprar</a>
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="container guarantee">
-
-<div>
-
-<h2>Garantia de 30 dias</h2>
-
-<p>
-
-Se você não ficar satisfeito com
-os resultados, devolvemos
-100% do seu dinheiro.
-
-</p>
-
-</div>
-
-<div>
-
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-
-</div>
-
-</div>
-
-
-
-<div class="container video">
-
-<h2 class="section-title">Especialista explica</h2>
-
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-
-</div>
-
-
-
-<div class="container faq">
-
-<h2 class="section-title">Perguntas frequentes</h2>
-
-<div class="faq-item">
-<strong>Quando aparecem os resultados?</strong>
-<p>Entre 2 e 4 semanas.</p>
-</div>
-
-<div class="faq-item">
-<strong>É seguro?</strong>
-<p>Sim, possui base científica e testes dermatológicos.</p>
-</div>
-
-<div class="faq-item">
-<strong>Como usar?</strong>
-<p>Aplicação diária na pele limpa.</p>
-</div>
-
-</div>
-
-
-
-<footer>
-
-© 2026 Tecnologia PDRN
-
-</footer>
-
-
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2056520708244599&ev=PageView&noscript=1" />
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1415154023383690&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <p>Atenção! Não faça Botox antes de conhecer o PDRN da Coreamy...</p>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <section class="hero-section">
+      <!-- Decorações de Fundo -->
+      <div class="deco-circle deco-1"></div>
+      <div class="deco-circle deco-2"></div>
+
+      <div class="container">
+        <!-- Conteúdo -->
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <div class="eyebrow-line"></div>
+            <span class="eyebrow-text">Tecnologia PDRN Bio-Tensor™</span>
+          </div>
+
+          <h1 class="hero-title">
+            Rejuvenesça 10 Anos com o <span class="italic-highlight">DNA de Salmão</span>:
+            O Truque Secreto das Atrizes Coreanas
+            Para uma <span class="italic-highlight">"Pele de Vidro"</span> em menos de 30 dias.
+          </h1>
+
+          <div class="hero-benefits">
+            <div class="benefit-item">
+              <i class="benefit-icon">✦</i>
+              <span>Efeito Lifting Natural (Zero aspecto artificial ou rosto "congelado")</span>
+            </div>
+            <div class="benefit-item">
+              <i class="benefit-icon">✦</i>
+              <span>Tecnologia de Alta Absorção Celular (Age de dentro para fora, direto na derme)</span>
+            </div>
+            <div class="benefit-item">
+              <i class="benefit-icon">✦</i>
+              <span>Suaviza visivelmente rugas profundas, bigode chinês e linhas de expressão</span>
+            </div>
+          </div>
+
+          <a href="#bio-tensor" class="hero-cta">Descobrir o Efeito</a>
+        </div>
+
+        <!-- Imagem Editorial -->
+        <div class="hero-image-wrapper">
+          <div class="main-image-frame">
+            <!-- Placeholder Imagem -->
+            <img src="/antes-e-depois.jpg" alt="Antes/Depois de Alta Resolução"
+              style="width: 100%; height: 100%; object-fit: cover;" loading="eager" fetchpriority="high"
+              decoding="async">
+          </div>
+
+          <!-- Card Flutuante 1: Resultado -->
+          <div class="glass-card glass-result">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Aprovado em Testes</span>
+            <small style="color:#888; margin-top:5px; font-size:0.7rem;">*Eficácia comprovada</small>
+          </div>
+
+          <!-- Card Flutuante 2: Selo -->
+          <div class="glass-card glass-trust">
+            <span style="font-size: 1.5rem;">🛡️</span>
+            <div>
+              <span style="display:block; font-weight:700; font-size:0.9rem;">Dermato-Safe</span>
+              <span style="display:block; font-size:0.7rem; color:#666;">Teste Clínico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Strip (Moved) -->
+    <!-- Barra de Confiança (Trust Bar) -->
+    <div
+      style="background: var(--black-luxury); color: #fff; padding: 40px 0; border-top: 1px solid rgba(212,175,55,0.3); border-bottom: 1px solid rgba(212,175,55,0.3);">
+      <div class="container"
+        style="display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:30px;">
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:1.5rem; color:var(--gold-primary);">🔬</span>
+          <span style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; font-weight:700;">Sem
+            Contraindicações</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:1.5rem; color:var(--gold-primary);">🔒</span>
+          <span style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; font-weight:700;">Site
+            Seguro</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:1.5rem; color:var(--gold-primary);">🤝</span>
+          <span style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; font-weight:700;">Garantia
+            de 30 Dias</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:15px;">
+          <span style="font-size:1.5rem; color:var(--gold-primary);">🚚</span>
+          <span style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; font-weight:700;">Entrega
+            Rastreável</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unique Mechanism Section (Bio-Tensor) -->
+    <!-- INÍCIO DO CÓDIGO DA DOBRA 2 (Bio-Tensor) -->
+    <section class="bio-tensor-section" id="bio-tensor">
+      <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header-group">
+          <span class="eyebrow">TECNOLOGIA COREANA PDRN™</span>
+          <h2 class="main-title">
+            Não é Mágica. É <span class="highlight">Bio-Ciência</span>.
+          </h2>
+          <p class="sub-description">
+            Entenda como o DNA de Salmão (PDRN) redefine o rejuvenescimento facial: agindo na raiz do problema,
+            reconstruindo as células de dentro para fora, sem o efeito artificial dos procedimentos comuns.
+          </p>
+        </div>
+
+        <!-- Grid de Cards -->
+        <div class="cards-grid">
+
+          <!-- Card 1 -->
+          <article class="feature-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-dna">🧬</i>
+            </div>
+            <h3 class="card-heading">DNA Raro & Biocompatível</h3>
+            <p class="card-body">
+              Extraído de forma ultra-purificada do salmão, nosso ativo possui 95% de compatibilidade com a genética
+              humana. Isso garante absorção profunda e imediata, agindo como um sinalizador biológico.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-bolt">⚡</i>
+            </div>
+            <h3 class="card-heading">Regeneração Celular Ativa</h3>
+            <p class="card-body">
+              Ao contrário de cremes superficiais, o PDRN penetra na derme e entrega um comando direto: forçar a
+              produção massiva de colágeno e elastina, firmando as estruturas do rosto.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-sparkles">✨</i>
+            </div>
+            <h3 class="card-heading">O Efeito "Pele de Vidro"</h3>
+            <p class="card-body">
+              O resultado é a famosa Glass Skin coreana: uma superfície de pele impecável, firme e ultra-iluminada.
+              Poros invisíveis e o brilho natural de juventude que nenhuma maquiagem imita.
+            </p>
+          </article>
+
+          <!-- Card 4 (Comparativo) -->
+          <article class="feature-card comparison">
+            <div class="icon-wrapper">
+              <i class="fas fa-ban">🚫</i>
+            </div>
+            <h3 class="card-heading">A Indústria Tradicional</h3>
+            <p class="card-body">
+              Utiliza petroquímicos ultrapassados que apenas mascaram o ressecamento. O resultado? Um rosto artificial,
+              dependente de produtos que não impedem a pele de continuar envelhecendo.
+            </p>
+          </article>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-container">
+          <a href="#bio-mechanism" class="btn-elegant">VEJA COMO</a>
+          <p class="disclaimer">Dermatologicamente testado e aprovado. Tecnologia PDRN™ Original.</p>
+        </div>
+      </div>
+    </section>
+    <!-- SEÇÃO: MECANISMO BIOLÓGICO -->
+    <section class="bio-mechanism-section" id="bio-mechanism">
+      <div class="container">
+        <div class="mechanism-content-wrapper">
+          <header class="mechanism-header">
+            <div class="mechanism-visual-circle">
+              <img src="/OIP.jpg" alt="Salmão DNA Source" loading="lazy" decoding="async">
+            </div>
+            <h2 class="mechanism-title">A Biologia Implacável do <br><span>DNA de Salmão (PDRN)</span></h2>
+            <p class="mechanism-subtitle">Seu corpo bloqueia cremes sintéticos comuns. O PDRN funciona porque "hackeia"
+              a sua biologia:</p>
+          </header>
+
+          <div class="mechanism-features">
+            <div class="mech-item">
+              <div class="mech-icon-circle">🧬</div>
+              <div class="mech-text">
+                <h3>O Código Exato</h3>
+                <p>É mais de 95% idêntico ao DNA humano.</p>
+              </div>
+            </div>
+
+            <div class="mech-item">
+              <div class="mech-icon-circle">⚡</div>
+              <div class="mech-text">
+                <h3>Absorção e Reconstrução</h3>
+                <p>Sua pele reconhece o ativo e o absorve instantaneamente, religando os motores de colágeno e elastina
+                  paralisados pela idade.</p>
+              </div>
+            </div>
+
+            <div class="mech-item highlight-card">
+              <div class="mech-icon-circle">🇰🇷</div>
+              <div class="mech-text">
+                <h3>O Segredo Coreano, Agora no Brasil</h3>
+                <p>A tecnologia de elite responsável pela "Pele de Vidro" das atrizes asiáticas é o fim das agulhas e
+                  procedimentos agressivos. Pare de usar cosméticos mortos e dê às suas células o código real do
+                  rejuvenescimento!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Novo Botão de Rolagem -->
+          <div class="cta-container" style="margin-top: 50px;">
+            <a href="#comparison" class="btn-elegant">VEJA COMO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIM DO CÓDIGO DA DOBRA 2 -->
+
+    <!-- Comparison Section (Premium) -->
+    <section class="comparison-section" id="comparison">
+      <div class="header-comparison">
+        <h2>Por que <span>Evoluir</span> para a Tecnologia PDRN?</h2>
+      </div>
+
+      <div class="comp-table">
+        <!-- PDRN -->
+        <div class="col-pdrn">
+          <h3 class="col-title">Tecnologia PDRN (DNA de Salmão)</h3>
+
+          <div class="row-comp">
+            <span class="category-label">Sensação</span>
+            <div class="item-content-comp">
+              <span class="check-icon">✦</span>
+              <div class="text-wrap-comp">
+                <strong>Zero Agulhas. Bio-Compatível.</strong>
+                <p>Sinta apenas o frescor de um sérum luxuoso. A pele absorve o DNA instantaneamente, sem dor, sem
+                  rejeição e sem inflamação.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Tempo</span>
+            <div class="item-content-comp">
+              <span class="check-icon">✦</span>
+              <div class="text-wrap-comp">
+                <strong>Regeneração Ativa e Contínua</strong>
+                <p>Sua pele começa a firmar no primeiro uso. Em 30 dias, a transformação celular entrega a verdadeira
+                  "Pele de Vidro" sem você precisar se esconder em casa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Expressão</span>
+            <div class="item-content-comp">
+              <span class="check-icon">✦</span>
+              <div class="text-wrap-comp">
+                <strong>Juventude com Movimento</strong>
+                <p>O PDRN reconstrói as fibras de colágeno de dentro para fora. Você rejuvenesce mantendo cada
+                  movimento, sorriso e a naturalidade do seu rosto.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Custo</span>
+            <div class="item-content-comp">
+              <span class="check-icon">✦</span>
+              <div class="text-wrap-comp">
+                <strong>Investimento Inteligente</strong>
+                <p>A tecnologia número 1 das atrizes asiáticas direto na sua rotina de casa, por uma fração irrisória do
+                  preço cobrado nas clínicas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OUTROS -->
+        <div class="col-others">
+          <h3 class="col-title">Métodos Antigos (Injetáveis e Procedimentos)</h3>
+
+          <div class="row-comp">
+            <span class="category-label">Sensação</span>
+            <div class="item-content-comp">
+              <span class="cross-icon red-highlight">✕</span>
+              <div class="text-wrap-comp">
+                <strong class="red-highlight">Invasivo e Traumático</strong>
+                <p>Injeções dolorosas que causam hematomas, inchaço e forçam seu corpo a lutar contra substâncias
+                  estranhas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Tempo</span>
+            <div class="item-content-comp">
+              <span class="cross-icon red-highlight">✕</span>
+              <div class="text-wrap-comp">
+                <strong class="red-highlight">Recuperação Lenta (Downtime)</strong>
+                <p>Exige dias de repouso, rosto descamando ou inchado, obrigando você a cancelar compromissos sociais.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Expressão</span>
+            <div class="item-content-comp">
+              <span class="cross-icon red-highlight">✕</span>
+              <div class="text-wrap-comp">
+                <strong class="red-highlight">Risco de "Rosto de Cera"</strong>
+                <p>Toxinas que paralisam os músculos, criando um aspecto plastificado, artificial e sem expressão
+                  ("rosto congelado").</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row-comp">
+            <span class="category-label">Custo</span>
+            <div class="item-content-comp">
+              <span class="cross-icon red-highlight">✕</span>
+              <div class="text-wrap-comp">
+                <strong class="red-highlight">Mensalidade Eterna nas Clínicas</strong>
+                <p>Sessões agressivas que variam de R$ 1.500 a R$ 5.000, com retoques obrigatórios que criam dependência
+                  financeira.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formula Secret Section (Luxury Redesign) -->
+    <section class="formula-section">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="eyebrow">A BIOLOGIA POR TRÁS DA "GLASS SKIN"</span>
+          <h2>O Código de Acesso: Como o DNA de Salmão (PDRN) Reconstrói Seu Rosto?</h2>
+          <div class="description-box">
+            A única tecnologia biomimética do mercado que não "camufla" o envelhecimento, mas invade a derme para forçar
+            a produção massiva de colágeno novo e real.
+          </div>
+        </header>
+
+        <div class="formula-grid-luxury">
+
+          <!-- Esquerda -->
+          <div class="feature-column left-col">
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">🧬</div>
+              <h3 class="feature-title">COMANDO GENÉTICO</h3>
+              <p class="feature-text">
+                O PDRN age como uma chave-mestra, invadindo as células envelhecidas e ligando os "motores" de
+                regeneração que haviam parado de funcionar devido à idade.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">🧬</div>
+              <h3 class="feature-title">RECONSTRUÇÃO PROFUNDA</h3>
+              <p class="feature-text">
+                Esqueça cremes superficiais. A molécula age de dentro para fora, religando as fibras de elastina
+                rompidas que causam flacidez, vincos e o "derretimento" facial.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">🛡️</div>
+              <h3 class="feature-title">AÇÃO ANTI-INFLAMATÓRIA</h3>
+              <p class="feature-text">
+                Acalma a pele instantaneamente, acelerando a cicatrização celular para apagar marcas de acne, manchas e
+                vermelhidão, devolvendo um tom 100% uniforme.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Centro -->
+          <div class="product-center">
+            <div class="product-aura"></div>
+            <img src="/Salmão.jpg" alt="PDRN DNA de Salmão" class="product-image" loading="lazy" decoding="async">
+          </div>
+
+          <!-- Direita -->
+          <div class="feature-column right-col">
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">⚡</div>
+              <h3 class="feature-title">ABSORÇÃO 95% COMPATÍVEL</h3>
+              <p class="feature-text">
+                Como o DNA do salmão é biologicamente quase idêntico ao humano, seu corpo não o rejeita. Ele "suga" o
+                ativo de forma imediata e com potência clínica máxima.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">✨</div>
+              <h3 class="feature-title">O EFEITO "PELE DE VIDRO"</h3>
+              <p class="feature-text">
+                Transforma drasticamente a textura do rosto. Fecha poros dilatados e cria uma superfície lisa, firme e
+                com aquele brilho natural e invejável das atrizes coreanas.
+              </p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon-wrap">🔄</div>
+              <h3 class="feature-title">BIO-ESTÍMULO CONTÍNUO</h3>
+              <p class="feature-text">
+                Ao invés de um efeito ilusório que sai quando você lava o rosto, o PDRN continua forçando o
+                rejuvenescimento e esticando a pele 24 horas por dia, de forma cumulativa.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Diagnosis/Ideal For You Section (Luxury Redesign) -->
+    <section class="diagnosis-section">
+      <div class="container">
+
+        <!-- Esquerda: Visual -->
+        <div class="diagnosis-visual">
+          <div class="image-outer-frame">
+            <img src="/woman-mirror.jpg" alt="Consulta Facial PDRN" class="main-img" loading="lazy" decoding="async">
+          </div>
+
+          <div class="diagnosis-summary">
+            <p class="summary-text">
+              Se você se identifica com 2 ou mais destes sinais, sua pele não precisa de mais "creminhos". Ela está em
+              processo de colapso de colágeno e exige uma bio-regeneração imediata.
+            </p>
+          </div>
+        </div>
+
+        <!-- Direita: Conteúdo -->
+        <div class="diagnosis-content">
+          <span class="eyebrow">ANÁLISE CELULAR: IDENTIFIQUE OS SINAIS</span>
+          <h2 class="diagnosis-title">
+            O DNA de Salmão (PDRN) é a Intervenção Exata Que Você Precisa?
+          </h2>
+
+          <ul class="symptoms-list">
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Sente que o <span>"Bigode Chinês"</span> e a flacidez estão deixando seu rosto com
+                um aspecto constante de cansaço e "derretimento"?</p>
+            </li>
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Percebe que os <span>"pés de galinha"</span> e as linhas da testa já estão
+                marcados tão profundamente que não somem nem quando você está séria?</p>
+            </li>
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Sua pele perdeu o <span>viço da juventude</span>, tornando-se opaca, sem brilho e
+                com poros cada vez mais dilatados e visíveis?</p>
+            </li>
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Quer recuperar a firmeza e o contorno facial, mas se recusa a passar pela
+                <span>dor e riscos</span> das injeções em clínicas?
+              </p>
+            </li>
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Já gastou fortunas com cosméticos tradicionais e sente que nenhum deles consegue
+                <span>resolver o problema na raiz</span>?
+              </p>
+            </li>
+            <li class="symptom-item">
+              <span class="symptom-icon">✦</span>
+              <p class="symptom-text">Sonha em ter uma pele firme e iluminada (o verdadeiro <span>Glass Skin</span>) que
+                usar maquiagem passe a ser uma escolha, e não obrigação?</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- Testimonials Section (Luxury Redesign) -->
+    <section class="testimonials-section">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="eyebrow">A ELITE DA BIO-REGENERAÇÃO</span>
+          <h2>O Fim dos Procedimentos Invasivos: Resultados de Quem Já Desbloqueou o Efeito Glass Skin</h2>
+        </header>
+
+        <div class="testimonials-grid">
+
+          <!-- Depoimento 1 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "Eu pagava horrores na dermatologista para preencher o bigode chinês e disfarçar a idade. Depois de 30
+              dias usando o PDRN, <strong>cancelei meu retorno</strong>. Minha pele voltou a ter a <strong>firmeza dos
+                meus 30 anos</strong> sem eu precisar levar uma única agulhada."
+            </p>
+            <div class="client-profile">
+              <img src="/review-carla.jpg" alt="Mariana S." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Mariana S.</span>
+                <span class="client-meta">48 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 2 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "O que as coreanas falam é verdade. A textura do meu rosto mudou completamente. Aquela pele opaca e
+              cansada sumiu. Hoje eu tenho aquele <strong>brilho espelhado e poros invisíveis</strong> que eu achava que
+              só existia com filtro de Instagram. É surreal."
+            </p>
+            <div class="client-profile">
+              <img src="/review-renata.jpg" alt="Luciana T." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Luciana T.</span>
+                <span class="client-meta">42 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 3 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "Eu sentia que meu rosto estava literalmente <strong>'derretendo'</strong> por causa da flacidez. Esse
+              extrato de DNA não esticou minha pele de forma artificial, ele <strong>reconstruiu o contorno do meu
+                maxilar</strong>. Sinto a pele densa e preenchida de dentro para fora."
+            </p>
+            <div class="client-profile">
+              <img src="/review-gersiane.jpg" alt="Sandra M." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Sandra M.</span>
+                <span class="client-meta">55 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 4 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "Confesso que achei meio bizarra essa história de DNA de salmão no início, mas estava desesperada para
+              apagar minhas marcas. Foi a melhor decisão. Em duas semanas as <strong>manchas clarearam</strong> e as
+              <strong>linhas profundas da testa</strong> começaram a sumir. É biologia pura."
+            </p>
+            <div class="client-profile">
+              <img src="/review-vera.jpg" alt="Beatriz L." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Beatriz L.</span>
+                <span class="client-meta">51 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 5 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "Eu tinha pavor de ficar com aquele rosto <strong>'congelado'</strong> e plastificado de clínica de
+              estética. Com essa tecnologia celular, eu <strong>rejuvenesci pelo menos uns 10 anos</strong>, mas
+              continuo parecendo comigo mesma. Minhas amigas juram que eu fiz plástica escondida!"
+            </p>
+            <div class="client-profile">
+              <img src="/review-marisa.jpg" alt="Carmem V." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Carmem V.</span>
+                <span class="client-meta">59 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depoimento 6 -->
+          <div class="testimonial-card">
+            <span class="quote-icon">“</span>
+            <p class="quote-text">
+              "Joguei todos os meus potes de cremes antigos no lixo. A diferença do PDRN é que não é um efeito ilusório
+              que sai quando você lava o rosto no banho. A cada dia que passa, minha pele acorda <strong>mais esticada,
+                firme e visivelmente mais jovem</strong>."
+            </p>
+            <div class="client-profile">
+              <img src="/review-maria.jpg" alt="Helena A." class="client-avatar" loading="lazy" decoding="async">
+              <div class="client-info">
+                <span class="client-name">Helena A.</span>
+                <span class="client-meta">62 ANOS • CLIENTE VERIFICADA</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Luxury Self-Care Section (Redesign) -->
+    <section class="self-care-luxury">
+      <div class="container">
+        <div class="self-care-grid">
+
+          <!-- Lado do Texto: Conteúdo Editorial -->
+          <div class="self-care-content">
+            <span class="eyebrow">MANIFESTO DA BIO-REGENERAÇÃO</span>
+            <h2 class="self-care-title">
+              Atenção! Você Merece <span>Cuidar de Você Mesma</span>
+            </h2>
+
+            <div class="editorial-body">
+              <p class="question-text">
+                Quanto custa sua beleza? Quanto você pagaria para se sentir bem? Bonita? Jovem? Desejada pelo seu
+                parceiro? Ser elogiada por outras pessoas?
+              </p>
+
+              <div class="quote-manifesto">
+                <p>
+                  "Cuidar de si mesma não é um Luxo. <strong>É uma obrigação.</strong><br>
+                  É um super poder de mulher!"
+                </p>
+              </div>
+
+              <p class="final-call">E CHEGOU A HORA DE VOCÊ SE SENTIR BEM NOVAMENTE...</p>
+            </div>
+          </div>
+
+          <!-- Lado da Imagem: Visual de Impacto -->
+          <div class="self-care-visual">
+            <div class="image-inner-wrap">
+              <img src="/confident-woman.jpg" alt="Mulher Confiante PDRN" class="self-care-img" loading="lazy"
+                decoding="async">
+              <div class="floating-badge-gold">
+                <span>100%</span>
+                <small>Beleza Real</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section (Luxury Redesign) -->
+    <section class="pricing-luxury" id="ofertas">
+      <div class="container">
+
+        <header class="pricing-header-luxury">
+          <p class="eyebrow">Invista na sua Melhor Versão</p>
+          <h2 class="title-luxury">Escolha o Ritmo da sua <span>Transformação</span></h2>
+        </header>
+
+        <div class="urgency-bar-luxury">
+          ⏳ <strong>OFERTA DE LANÇAMENTO:</strong> Devido à alta demanda, garantimos esses preços apenas enquanto durar
+          o lote atual.
+        </div>
+
+        <!-- Timer de Escassez -->
+        <div class="countdown-wrapper-luxury">
+          <p class="timer-label">A oferta encerra hoje à meia-noite:</p>
+          <div id="midnight-timer" class="timer-display">
+            <div class="timer-block"><span id="timer-hours">00</span><small>hs</small></div>
+            <div class="timer-block"><span id="timer-minutes">00</span><small>min</small></div>
+            <div class="timer-block"><span id="timer-seconds">00</span><small>seg</small></div>
+          </div>
+        </div>
+
+        <div class="pricing-grid-luxury">
+
+          <!-- 1 FRASCO -->
+          <div class="price-card-luxury">
+            <span class="kit-subtitle-luxury">Para Conhecer</span>
+            <h3 class="kit-name-luxury">01 Frasco</h3>
+            <img src="/1-PDRN.png" alt="Kit 1 Frasco PDRN" class="product-img-luxury" loading="lazy" decoding="async">
+            <div class="price-wrapper-luxury">
+              <span class="old-price-luxury">De R$ 247</span>
+              <span class="new-price-luxury">12x R$ 13,75</span>
+              <span class="price-details-luxury">ou R$ 137 à vista</span>
+            </div>
+            <a href="https://ev.braip.com/checkout/pla4d460/chepkj6n" class="cta-btn-luxury">Experimentar</a>
+            <div class="checkout-trust-badges">
+              <span class="badge-item"><i class="fas fa-check-circle"></i> ANVISA</span>
+              <span class="badge-item"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
+          </div>
+
+          <!-- 3 FRASCOS -->
+          <div class="price-card-luxury card-bestseller-luxury">
+            <div class="bestseller-badge">Mais Vendido</div>
+            <span class="kit-subtitle-luxury">Tratamento Recomendado</span>
+            <h3 class="kit-name-luxury">03 Frascos</h3>
+            <img src="/3-PDRN-1.png" alt="Kit 3 Frascos PDRN" class="product-img-luxury" loading="lazy"
+              decoding="async">
+
+            <div class="price-wrapper-luxury">
+              <span class="old-price-luxury">De R$ 497</span>
+              <span class="new-price-luxury">12x R$ 27,81</span>
+              <span class="price-details-luxury">ou R$ 277 à vista</span>
+            </div>
+            <a href="https://ev.braip.com/checkout/pla0x900/ched047w" class="cta-btn-luxury">Comprar Kit</a>
+            <div class="checkout-trust-badges">
+              <span class="badge-item"><i class="fas fa-check-circle"></i> ANVISA</span>
+              <span class="badge-item"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
+          </div>
+
+          <!-- 05 FRASCOS -->
+          <div class="price-card-luxury card-vip-luxury">
+            <div class="best-choice-badge">Melhor Custo-Benefício</div>
+            <span class="kit-subtitle-luxury" style="color: var(--gold-light, #F4E5B2);">Tratamento VIP</span>
+            <h3 class="kit-name-luxury" style="font-size: 2.2rem;">05 Frascos</h3>
+            <img src="/5-PDRN.png" alt="Kit 5 Frascos PDRN" class="product-img-luxury" loading="lazy" decoding="async">
+
+            <div class="price-wrapper-luxury">
+              <span class="old-price-luxury">De R$ 697</span>
+              <span class="new-price-luxury" style="font-size: 3rem;">12x R$ 39,85</span>
+              <span class="price-details-luxury">ou R$ 397 à vista</span>
+            </div>
+            <a href="https://ev.braip.com/checkout/play4lrj/chemxq0k" class="cta-btn-luxury">Comprar agora</a>
+            <div class="checkout-trust-badges">
+              <span class="badge-item"><i class="fas fa-check-circle"></i> ANVISA</span>
+              <span class="badge-item"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
+          </div>
+
+          <!-- 12 FRASCOS -->
+          <div class="price-card-luxury">
+            <span class="kit-subtitle-luxury">Tratamento Profissional</span>
+            <h3 class="kit-name-luxury">12 Frascos</h3>
+            <img src="/12-PDRN.png" alt="Kit 12 Frascos PDRN" class="product-img-luxury" loading="lazy"
+              decoding="async">
+
+            <div class="price-wrapper-luxury">
+              <span class="old-price-luxury">De R$ 1.497</span>
+              <span class="new-price-luxury">12x R$ 69,98</span>
+              <span class="price-details-luxury">ou R$ 697 à vista</span>
+            </div>
+            <a href="https://ev.braip.com/checkout/plar4w9g/che9681e" class="cta-btn-luxury">Comprar agora</a>
+            <div class="checkout-trust-badges">
+              <span class="badge-item"><i class="fas fa-check-circle"></i> ANVISA</span>
+              <span class="badge-item"><i class="fas fa-lock"></i> Compra Segura</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip (Antigo Banner Roxo) -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <span class="trust-icon">🛡️</span>
+            <span>30 dias de satisfação</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🚚</span>
+            <span>Frete Grátis p/ Todo Brasil</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span>Compra 100% Segura</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garantia PDRN Luxury -->
+    <section class="guarantee-section">
+      <div class="container">
+        <div class="guarantee-card">
+
+          <div class="guarantee-badge-side">
+            <div class="seal-wrap">
+              <div class="seal-ring"></div>
+              <div class="seal-content">
+                <span class="seal-label">Garantia Blindada</span>
+                <span class="seal-number">30</span>
+                <span class="seal-days">Dias</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="guarantee-content">
+            <span class="guarantee-eyebrow">COMPROMISSO DE BIO-REGENERAÇÃO</span>
+            <h2 class="guarantee-title">Desafio 30 Dias: <br>Regeneração Comprovada ou Seu Dinheiro de Volta!</h2>
+
+            <p class="guarantee-text">
+              Confiamos tanto na biologia do <strong>PDRN (DNA de Salmão)</strong> que o risco é todo nosso: <strong>use
+                nossa tecnologia por 30 dias.</strong> Se você não notar uma pele visivelmente mais firme, linhas
+              suavizadas e o verdadeiro efeito <strong>Glass Skin</strong>, nós devolveremos <strong>100% do seu
+                dinheiro.</strong>
+            </p>
+
+            <div class="guarantee-footer">
+              *Garantia incondicional baseada em nossa eficácia clínica.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Institutional Section -->
+    <section class="video-institutional-section">
+      <div class="container">
+        <header class="video-header">
+          <p class="eyebrow">Compromisso com a Ciência</p>
+          <h2 class="video-title">Garantia do Idealizador e responsável pelo desenvolvimento do produto no Brasil
+            <span>DR. Soo-Hoo</span>
+          </h2>
+        </header>
+        <div class="video-container">
+          <video controls preload="auto" playsinline class="institutional-video">
+            <source src="/video-institucional.mp4" type="video/mp4">
+            Seu navegador não suporta esse formato de vídeo.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars Section: Nossos Pilares (Luxury Redesign) -->
+    <section class="pillars-section">
+      <div class="container">
+
+        <header class="pillars-header-luxury">
+          <span class="eyebrow">Compromisso PDRN</span>
+          <h2 class="title-luxury">Nossos Pilares de <span>Excelência</span></h2>
+        </header>
+
+        <div class="pillars-grid-luxury">
+
+          <!-- TECNOLOGIA PREMIUM -->
+          <article class="pillar-card-luxury">
+            <div class="icon-wrap-luxury">🔬</div>
+            <h3 class="pillar-title-luxury">Tecnologia Premium</h3>
+            <p class="pillar-text-luxury">
+              Não é apenas um creme, é biotecnologia aplicada. Utilizamos matéria-prima de nível internacional
+              com a concentração exata de ativos tensores para garantir o efeito lifting imediato que
+              prometemos.
+            </p>
+          </article>
+
+          <!-- SEGURANÇA TOTAL -->
+          <article class="pillar-card-luxury">
+            <div class="icon-wrap-luxury">🛡️</div>
+            <h3 class="pillar-title-luxury">Segurança Total</h3>
+            <p class="pillar-text-luxury">
+              Sua pele é preciosa. Nossa fórmula é dermatologicamente testada, hipoalergênica e aprovada pela
+              ANVISA. Livre de parabenos e substâncias agressivas, sendo segura para seu uso diário.
+            </p>
+          </article>
+
+          <!-- NOSSA MISSÃO -->
+          <article class="pillar-card-luxury">
+            <div class="icon-wrap-luxury">🎯</div>
+            <h3 class="pillar-title-luxury">Nossa Missão</h3>
+            <p class="pillar-text-luxury">
+              Acreditamos que a idade é apenas um número. Nossa missão é devolver sua autoestima e o prazer de
+              se olhar no espelho instantaneamente, sem que você precise gastar fortunas com cirurgias.
+            </p>
+          </article>
+
+          <!-- BELEZA CONSCIENTE -->
+          <article class="pillar-card-luxury">
+            <div class="icon-wrap-luxury">🌿</div>
+            <h3 class="pillar-title-luxury">Beleza Consciente</h3>
+            <p class="pillar-text-luxury">
+              Beleza sem crueldade. O PDRN é um produto 100% Cruelty Free (não testado em animais) e Vegano.
+              Cuidamos da sua beleza respeitando a vida e o meio ambiente em cada etapa da produção.
+            </p>
+          </article>
+
+          <!-- LOGÍSTICA ÁGIL -->
+          <article class="pillar-card-luxury">
+            <div class="icon-wrap-luxury">🚚</div>
+            <h3 class="pillar-title-luxury">Logística Ágil</h3>
+            <p class="pillar-text-luxury">
+              Produção Nacional, fresca e pronta para envio. Ao comprar PDRN, você apoia a indústria
+              brasileira e garante uma entrega expressa e rastreável direto para o conforto da sua casa.
+            </p>
+          </article>
+
+          <!-- MOLDURA DE IMAGEM -->
+          <div class="pillar-card-luxury image-card-luxury">
+            <!-- Usando a imagem sugerida adaptada para o contexto do produto -->
+            <img src="/5-PDRN.png" alt="Excelência PDRN" loading="lazy" decoding="async">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- WhatsApp Support Section -->
+    <!-- Support & FAQ Section (Luxury Redesign) -->
+    <section class="faq-section">
+      <div class="container">
+
+        <!-- Support CTA Premium -->
+        <div class="support-wrapper">
+          <a href="https://wa.me/5521970019689?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20o%20PDRN%20da%20Coreamy."
+            target="_blank" class="support-card-luxury">
+            <div class="whatsapp-icon-luxury">💬</div>
+            <div class="support-text-luxury">
+              <span>Atendimento Personalizado</span>
+              <strong>Restou alguma dúvida? Fale Conosco</strong>
+            </div>
+          </a>
+        </div>
+
+        <!-- FAQ Header -->
+        <header class="faq-header-luxury">
+          <span class="eyebrow">Dúvidas Frequentes</span>
+          <h2 class="title-luxury">Consultoria PDRN</h2>
+        </header>
+
+        <!-- Accordion Luxury -->
+        <div class="accordion-luxury">
+
+          <!-- Q1 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Quem pode usar o PDRN?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                Nossa tecnologia foi formulada para <strong>todos os tipos de pele</strong>. É a intervenção ideal para
+                mulheres que já apresentam sinais de colapso de colágeno — como flacidez, "bigode chinês", rugas
+                profundas e perda do viço natural — e desejam uma <strong>regeneração biológica profunda</strong> sem
+                recorrer a agulhas.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Em quanto tempo terei resultados?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                O <strong>"choque biológico"</strong> de hidratação e luminosidade já é percebido nos primeiros dias. No
+                entanto, o verdadeiro efeito <strong>"Glass Skin" (Pele de Vidro)</strong> e a firmeza estrutural
+                atingem sua alta performance a partir de <strong>30 dias de uso contínuo</strong>, que é o tempo
+                necessário para o DNA de salmão forçar a produção de novas fibras de colágeno.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Quanto tempo dura o efeito?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                Diferente de cremes comuns ou maquiagens que saem no banho, o PDRN atua na <strong>reconstrução da
+                  derme</strong>. O resultado não é temporário, é <strong>cumulativo</strong>. Enquanto você mantiver a
+                nutrição celular diária com o ativo, sua pele continuará preservando a firmeza e estagnando o processo
+                de envelhecimento.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">É aprovado pela ANVISA?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                Sim, <strong>100% aprovado e seguro</strong>. Nossa fórmula internacional quebrou as barreiras e foi
+                totalmente regulamentada no Brasil, atendendo aos mais rigorosos padrões da <strong>ANVISA e do
+                  Ministério da Saúde</strong> para uso tópico (sem agulhas).
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Existem contraindicações?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                Por ser uma molécula com mais de <strong>95% de compatibilidade</strong> com o DNA humano, o PDRN possui
+                uma taxa de rejeição praticamente nula. A fórmula é incrivelmente segura, não causa inflamação e é
+                indicada até para peles sensíveis. (Por protocolo de saúde, gestantes e lactantes devem sempre consultar
+                o médico antes de inserir novos ativos na rotina).
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Qual o prazo de entrega?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                Trabalhamos com <strong>logística expressa</strong> para todo o Brasil. O prazo médio varia de <strong>3
+                  a 7 dias úteis</strong> após a confirmação do pagamento, dependendo da sua região. Você receberá o
+                código de rastreamento VIP em seu e-mail e WhatsApp para acompanhar cada passo.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">Posso usar com maquiagem?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                <strong>Sim!</strong> O PDRN tem uma absorção ultrarrápida e não deixa resíduos. Você pode aplicá-lo,
+                esperar 2 minutos para a pele absorver completamente e em seguida aplicar sua maquiagem ou protetor
+                solar normalmente. Ele inclusive funciona como um excelente <strong>primer biológico</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8 -->
+          <div class="accordion-item-luxury">
+            <button class="accordion-trigger-luxury">
+              <span class="question-text-luxury">O produto é gorduroso?</span>
+              <div class="icon-plus-luxury"></div>
+            </button>
+            <div class="accordion-content-luxury">
+              <div class="content-inner-luxury">
+                <strong>De forma alguma.</strong> Nossa fórmula foi desenvolvida pensando no clima do Brasil. Ela possui
+                um toque seco e aveludado, sendo rapidamente reconhecida e "sugada" pela pele. É perfeita inclusive para
+                quem tem pele oleosa, pois hidrata sem obstruir os poros.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>
