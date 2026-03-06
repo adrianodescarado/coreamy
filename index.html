@@ -1,509 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Coreamy | Rejuvenescedor com DNA de Salmão</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Montserrat;
-background:#f6f6f6;
-color:#222;
-line-height:1.5;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
-}
-
-.topbar{
-background:#111;
-color:white;
-text-align:center;
-padding:10px;
-font-size:14px;
-}
-
-.hero{
-background:white;
-padding:80px 0;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.hero h1{
-font-family:"Playfair Display";
-font-size:48px;
-line-height:1.2;
-margin-bottom:25px;
-}
-
-.hero span{
-color:#c49b3b;
-}
-
-.hero ul{
-margin:20px 0;
-}
-
-.hero li{
-margin-bottom:12px;
-list-style:none;
-font-size:18px;
-}
-
-.hero img{
-width:100%;
-border-radius:12px;
-}
-
-.cta{
-display:inline-block;
-margin-top:20px;
-background:#c49b3b;
-color:white;
-padding:18px 35px;
-border-radius:5px;
-font-weight:700;
-text-decoration:none;
-}
-
-.trust{
-background:#111;
-color:white;
-padding:30px;
-text-align:center;
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.section{
-padding:80px 0;
-background:white;
-}
-
-.section-title{
-text-align:center;
-font-family:"Playfair Display";
-font-size:38px;
-margin-bottom:40px;
-}
-
-.grid-4{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-}
-
-.card{
-background:#f8f8f8;
-padding:30px;
-border-radius:10px;
-text-align:center;
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-.comparison{
-background:#fafafa;
-}
-
-.comparison-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-}
-
-.comp-card{
-background:white;
-padding:30px;
-border-radius:10px;
-}
-
-.formula{
-background:white;
-}
-
-.formula-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.formula img{
-width:100%;
-}
-
-.testimonials{
-background:#fafafa;
-}
-
-.test-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.test{
-background:white;
-padding:30px;
-border-radius:10px;
-}
-
-.pricing{
-background:white;
-}
-
-.price-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
-
-.price-card{
-border:1px solid #ddd;
-padding:30px;
-border-radius:10px;
-text-align:center;
-}
-
-.price{
-font-size:28px;
-font-weight:800;
-margin:15px 0;
-}
-
-footer{
-background:#111;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-@media(max-width:900px){
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
-.grid-4{
-grid-template-columns:1fr;
-}
-
-.comparison-grid{
-grid-template-columns:1fr;
-}
-
-.formula-grid{
-grid-template-columns:1fr;
-}
-
-.test-grid{
-grid-template-columns:1fr;
-}
-
-.price-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coreamy - Rejuvenescimento Facial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #FAF9F6; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .bg-gold { background-color: #D4AF37; }
+        .text-gold { color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+    </style>
 </head>
-
 <body>
 
-<div class="topbar">
-⚠️ Não faça Botox antes de conhecer o PDRN da Coreamy
-</div>
-
-<section class="hero">
-<div class="container hero-grid">
-
-<div>
-
-<h1>
-Rejuvenesça 10 anos com o  
-<span>DNA de Salmão</span>
-</h1>
-
-<ul>
-<li>✦ Lifting natural sem agulhas</li>
-<li>✦ Estimula colágeno profundo</li>
-<li>✦ Suaviza rugas e linhas de expressão</li>
-</ul>
-
-<a class="cta" href="#">
-Descobrir agora
-</a>
-
-</div>
-
-<div>
-
-<img src="antes-depois.jpg">
-
-</div>
-
-</div>
-</section>
-
-<div class="trust">
-<div>🔬 Testado</div>
-<div>🔒 Compra Segura</div>
-<div>🤝 Garantia 30 dias</div>
-<div>🚚 Entrega rastreada</div>
-</div>
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">
-Não é mágica. É Bio-Ciência.
-</h2>
-
-<div class="grid-4">
-
-<div class="card">
-<h3>DNA Biocompatível</h3>
-<p>Compatível com células humanas para absorção profunda.</p>
-</div>
-
-<div class="card">
-<h3>Regeneração Celular</h3>
-<p>Reativa colágeno e elastina naturalmente.</p>
-</div>
-
-<div class="card">
-<h3>Pele de Vidro</h3>
-<p>Textura uniforme e iluminada.</p>
-</div>
-
-<div class="card">
-<h3>Sem Químicos Pesados</h3>
-<p>Fórmula limpa e segura.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section comparison">
-
-<div class="container">
-
-<h2 class="section-title">
-PDRN vs Procedimentos
-</h2>
-
-<div class="comparison-grid">
-
-<div class="comp-card">
-
-<h3>PDRN</h3>
-
-<p>✔ Sem dor</p>
-<p>✔ Sem agulhas</p>
-<p>✔ Resultado natural</p>
-<p>✔ Uso em casa</p>
-
-</div>
-
-<div class="comp-card">
-
-<h3>Procedimentos tradicionais</h3>
-
-<p>✖ Dor</p>
-<p>✖ Invasivo</p>
-<p>✖ Rosto artificial</p>
-<p>✖ Custo alto</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section formula">
-
-<div class="container">
-
-<h2 class="section-title">
-Como o DNA de Salmão funciona
-</h2>
-
-<div class="formula-grid">
-
-<div>
-
-<h3>Reconstrução celular</h3>
-<p>Reativa tecidos danificados.</p>
-
-<h3>Anti-inflamatório</h3>
-<p>Reduz vermelhidão.</p>
-
-</div>
-
-<img src="produto.png">
-
-<div>
-
-<h3>Absorção máxima</h3>
-<p>95% compatível com DNA humano.</p>
-
-<h3>Efeito Glass Skin</h3>
-<p>Pele lisa e iluminada.</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section testimonials">
-
-<div class="container">
-
-<h2 class="section-title">
-Resultados Reais
-</h2>
-
-<div class="test-grid">
-
-<div class="test">
-<p>"Minha pele voltou a parecer de 30 anos."</p>
-<strong>Mariana • 48 anos</strong>
-</div>
-
-<div class="test">
-<p>"A textura do rosto mudou completamente."</p>
-<strong>Luciana • 42 anos</strong>
-</div>
-
-<div class="test">
-<p>"Recuperei o contorno facial."</p>
-<strong>Sandra • 51 anos</strong>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section pricing">
-
-<div class="container">
-
-<h2 class="section-title">
-Escolha seu Kit
-</h2>
-
-<div class="price-grid">
-
-<div class="price-card">
-
-<h3>1 frasco</h3>
-
-<div class="price">
-R$147
-</div>
-
-<a class="cta" href="#">
-Comprar
-</a>
-
-</div>
-
-<div class="price-card">
-
-<h3>2 frascos</h3>
-
-<div class="price">
-R$197
-</div>
-
-<a class="cta" href="#">
-Comprar
-</a>
-
-</div>
-
-<div class="price-card">
-
-<h3>3 frascos</h3>
-
-<div class="price">
-R$247
-</div>
-
-<a class="cta" href="#">
-Comprar
-</a>
-
-</div>
-
-<div class="price-card">
-
-<h3>5 frascos</h3>
-
-<div class="price">
-R$297
-</div>
-
-<a class="cta" href="#">
-Comprar
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Coreamy  
-Todos os direitos reservados
-
-</footer>
+    <section class="relative bg-[#FAF9F6] py-16 px-6 md:px-20 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 space-y-6">
+            <h1 class="text-4xl md:text-6xl text-gray-800 leading-tight">
+                Recupere a <span class="italic">juventude</span> da sua pele em semanas.
+            </h1>
+            <p class="text-lg text-gray-600">Fórmula exclusiva com tecnologia avançada para manchas e rugas.</p>
+            <button class="bg-black text-white px-10 py-4 rounded-sm uppercase tracking-widest hover:bg-gray-800 transition">Quero minha pele jovem</button>
+        </div>
+        <div class="md:w-1/2 mt-10 md:mt-0">
+            <img src="URL_DA_SUA_IMAGEM_HERO" alt="Antes e Depois Coreamy" class="w-full h-auto shadow-2xl">
+        </div>
+    </section>
+
+    <div class="bg-white py-10 border-y border-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <span class="text-gold text-3xl font-bold italic">98%</span>
+                <p class="text-xs uppercase tracking-tighter">Aprovação das clientes</p>
+            </div>
+            <div>
+                <span class="text-gold text-3xl font-bold italic">+10k</span>
+                <p class="text-xs uppercase tracking-tighter">Mulheres transformadas</p>
+            </div>
+            </div>
+    </div>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl text-center mb-12 uppercase tracking-widest">Por que escolher a <span class="text-gold">Coreamy?</span></h2>
+            <div class="grid grid-cols-2 gap-0 border border-gray-200">
+                <div class="bg-black text-white p-8">
+                    <h3 class="text-xl mb-6 text-gold italic">Coreamy</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>✓ Tecnologia Bio-Ativa</li>
+                        <li>✓ Resultados em 14 dias</li>
+                        <li>✓ Sem ácidos agressivos</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-8">
+                    <h3 class="text-xl mb-6 text-gray-400 italic">Outros</h3>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li>✕ Fórmulas genéricas</li>
+                        <li>✕ Demora meses</li>
+                        <li>✕ Causa irritação</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#FAF9F6]">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 border border-gray-200 text-center hover:shadow-xl transition">
+                <p class="uppercase text-xs mb-4">Tratamento Inicial</p>
+                <h3 class="text-2xl mb-4 italic">1 Frasco</h3>
+                <img src="URL_PRODUTO" class="mx-auto mb-4">
+                <p class="text-3xl font-bold mb-6 italic">12x R$ 19,70</p>
+                <button class="w-full bg-black text-white py-3 uppercase text-sm tracking-widest">Comprar Agora</button>
+            </div>
+
+            <div class="bg-white p-8 border-2 border-gold text-center relative shadow-2xl scale-105">
+                <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-white px-4 py-1 text-xs uppercase">Mais Vendido</span>
+                <p class="uppercase text-xs mb-4">Tratamento Intensivo</p>
+                <h3 class="text-2xl mb-4 italic">3 Frascos</h3>
+                <img src="URL_PRODUTO" class="mx-auto mb-4">
+                <p class="text-gold text-sm line-through">De R$ 597,00</p>
+                <p class="text-4xl font-bold mb-6 italic text-gray-800">12x R$ 39,90</p>
+                <button class="w-full bg-gold text-white py-4 uppercase font-bold tracking-widest">Aproveitar Desconto</button>
+            </div>
+
+            <div class="bg-white p-8 border border-gray-200 text-center">
+                <p class="uppercase text-xs mb-4">Tratamento Completo</p>
+                <h3 class="text-2xl mb-4 italic">5 Frascos</h3>
+                <img src="URL_PRODUTO" class="mx-auto mb-4">
+                <p class="text-3xl font-bold mb-6 italic">12x R$ 59,90</p>
+                <button class="w-full bg-black text-white py-3 uppercase text-sm tracking-widest">Comprar Agora</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-gray-400 py-10 text-center text-xs">
+        <p>© 2026 Coreamy - Todos os direitos reservados.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <img src="URL_METODOS_PAGAMENTO" alt="Pagamentos" class="h-6 opacity-50">
+        </div>
+    </footer>
 
 </body>
 </html>
